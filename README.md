@@ -4,30 +4,20 @@
 
 # Sobre o projeto
 
-## Minha solução
+Exercício proposto no Modulo "E" do curso de Javascript da plataforma CursoEmVideo
+A ideia foi realizar o exercício e posteriormente refazer de acordo com a teoria proposta em aula
 
-### Pontos Positivos
+## Evolução
+![Evolution of project](https://github.com/KennysSparda/SuperContador/blob/main/assets/diagrama-evolucao.png)
 
-``` bash
-Funcionou para contagens CRESCENTES
-Tratava exceção de campos vazios
-Trata exceção de passo maior que trajetória
-```
+## Home
+![Image default](https://github.com/KennysSparda/SuperContador/blob/main/assets/image-default.png)
 
-### Pontos Negativos
+## Contagem crescente
+![Crescent Count](https://github.com/KennysSparda/SuperContador/blob/main/assets/image-running-1.png)
 
-```bash
-NÃO funcionou para contagens DECRESCENTES
-NÃO tratava exceção de passo zero ou negativo
-```
+## Contagem decrescente
+![Decrescent Count](https://github.com/KennysSparda/SuperContador/blob/main/assets/image-running-2.png)
 
-## Solução proposta
-
-```bash
-Atribuição de componentes HTML em Variáveis
-Tratamento exceção de campos vazios
-Reinício do resultado e mensagem ao usuário
-Conversão das variáveis para Number
-Tratamento exceção para passo igual a zero ou negativo
-Bifurcação para contagem CRESCENTE e DECRESCENTE
-```
+## Tratamento de exceção de campo vazio
+![Exception](https://github.com/KennysSparda/SuperContador/blob/main/assets/image-error.png)
