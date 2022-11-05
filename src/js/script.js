@@ -1,41 +1,39 @@
 function contar() {
-  var inicio = document.getElementById("inicio").value
-  var fim = document.getElementById("fim").value
-  var passo = document.getElementById("passo").value
-  var res = document.getElementById("res")
-  var elem = document.createElement('p')
-  
-  // Verificando se todos os campos estao preenchidos ( verificando em string )
-  if( inicio.length == 0 || fim.length == 0 || passo.length == 0){
-    res.innerHTML = "[ERRO]: Preencha todos os campos e tente novamente!"
+  // Atribuição de componentes HTML em Variáveis
+  let txtInicio = document.getElementById('txtInicio')
+  let txtFim = document.getElementById('txtFim')
+  let txtPasso = document.getElementById('txtPasso')
+  let txtResultado = document.getElementById('txtResultado')
+
+  // Tratamento de exceção de campos vazios
+  if( txtInicio.value.length == 0 || txtFim.value.length == 0 || txtPasso.value.length == 0 ) {
+    txtResultado.innerHTML = "[ERRO]: Preencha todos os campos e tente novamente!"
   } else {
+    // Reinício da contagem e mensagem ao usuário
+    txtResultado.innerHTML = 'Contando: <br>'
 
-    // Verificando se o 'inicio' e maior que o 'fim' ( convertendo para Number() )
-    if( Number(inicio) > Number(fim)) {
-      res.innerHTML = "[ERRO]: Inicio menor que o fim!"
+    // Conversão das variáveis para Number
+    let inicio = Number(txtInicio.value)
+    let fim = Number(txtFim.value)
+    let passo = Number(txtPasso.value)
+
+    // Tratamento de exceção para passo igual a zero ou negativo
+    if( passo <= 0 ) {
+      window.alert('Passo inválido! Considerando PASSO 1')
+    }
+
+    // Bifurcação para contagem CRESCENTE e DECRESCENTE
+    if( inicio < fim ) {
+      // Contagem crescente
+      for(let contador = inicio; contador <= fim; contador += passo) {
+        txtResultado.innerHTML += `${contador} \u{1F449} `
+      }
     } else {
-
-      // Verificando se o passo e maior que o trajeto
-      if( Number(passo) > (Number(fim) - Number(inicio)) ) {
-        res.innerHTML = "[ERRO]: Passo maior que a perna!"
-      } else {
-
-        // Contador processando
-        var contador = Number(inicio)
-        while(contador <= Number(fim)) {
-
-          elem.innerHTML += contador
-          if ( contador > (Number(fim)-Number(passo)) ) {
-            elem.innerHTML += ' 🏁 '
-          } else {
-            elem.innerHTML += ' 👉 ' 
-          }
-          contador += Number(passo)
-          
-        }
-        res.innerHTML = 'Contando:'
-        res.appendChild(elem)
+      // Contagem decrescente
+      for(let contador = inicio; contador >= fim; contador -= passo) {
+        txtResultado.innerHTML += `${contador} \u{1F449} `
       }
     }
+    txtResultado.innerHTML += `\u{1F3C1}`
   }
 }
