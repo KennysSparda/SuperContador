@@ -23,9 +23,9 @@ A ideia foi realizar o exercício e posteriormente refazer de acordo com a teori
 ![Exception](https://github.com/KennysSparda/SuperContador/blob/main/assets/image-error.png)
 
 # Tecnologias utilizadas
---Javascript
---HTML
---CSS
+-Javascript
+-HTML
+-CSS
 
 ## Como executar o projeto
 
